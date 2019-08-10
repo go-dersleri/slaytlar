@@ -1,0 +1,199 @@
+Go Programlama Dili
+Ders 1 - Giriş
+# 6 Aug 2019
+Tags: lecture1, introduction
+
+Halil Can Kaşkavalcı
+Yazılım Geliştirici, Sensys Gatso Managed Services BV
+Amsterdam, Netherlands
+halil@kaskavalci.com
+https://kaskavalci.com
+@hkaskavalci
+
+Go Programlama Diline Başlangıç
+
+* Tarihçe
+
+- 2007 yılında Google'da çalışan geliştiriciler tarafından tohumları atıldı (Robert Griesemer, Rob Pike, Ken Thompson)
+- 2012 yılında Go 1 yayımlandı
+- 2019 yılında Go 1.12 yayımlandı
+- Go 2 çalışmaları sürüyor
+
+.image images/BLUE_GLASSES_GOPHER.png _ 600
+
+* Neden yeni bir programlama dili?
+
+- Google'da yavaş işleyen program geliştirme sürecini hızlandırmak için tasarlandı.
+- C, C++, Java eski ve hantal. Çok çekirdekli işlemciler ve Web servisleri henüz yoktu.
+- Büyük projeler ve paralel programlama için kolay bir alternatif yok.
+
+Gereksinimler:
+
+- Verimlilik
+- Güvenlik
+- Koşutzamanlılık (Concurrency)
+- Ölçeklenirlik (Scalability)
+- Hızlı geliştirme döngüsü (Development Cycle)
+
+* Go size ne sağlar?
+
+- Kısa ve öz. Sizi daha verimli yapar.
+- Hız. Makina koduna gerçek dönüşür.
+- Nesneye dayalı. Ancak bildiğiniz C++/Java/C# gibi değil.
+- Koşutzamanlı. Çok kolay ve güvenli.
+- Kolay bağımlılık yönetimi (Dependency).
+- Bellek yönetimi. Çöp Toplama (Garbage Collection) desteği.
+- 10 işletim sistemi ve 31 mimariye derleme. Bkz: [[https://golang.org/doc/install/source#environment][Go Çevre Değişkenleri]]
+
+* Go nerede işe yaramaz?
+
+- Genel modüller (Generic) yok. Go 2 ile geliyor.
+- Nesneye dayalı mimariler. Tam olarak Nesneye Dayalı bir dil değil.
+- Gömülü sistemler. [[https://tinygo.org/][TinyGo]] bunun üzerinde çalışıyor.
+
+* Neden Go öğrenmeyeliyim? - 1
+
+-  [[https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted][2019 Stackoverflow]] anketinde en çok öğrenilmek istenen 3. dil
+
+.image images/most-wanted-langs.png _ 600
+
+* Neden Go öğrenmeyeliyim? - 2
+
+-  [[https://insights.stackoverflow.com/survey/2019#top-paying-technologies][2019 Stackoverflow]] anketinde en iyi kazandıran istenen 3. dil
+
+.image images/most-paying-langs.png _ 600
+
+* Neden Go öğrenmeyeliyim? - 3
+
+Maskot!
+
+.image images/CouchPotatoGopher.png _ 600
+
+
+* Bana kodu göster!
+
+.play hello.go
+
+* Kod analiz - Package
+
+.code hello.go HLP
+
+- Go programi main paketine sahip olmalı
+- Paketler Go kodunu organize eder
+
+* Kod analiz - Import
+
+.code hello.go HLI
+
+- *import* anahtar kelimesi farklı bir paketi kullanmamızı sağlar
+- Go standart kütüphanesi temel tüm ihtiyaçları karşılar. [[https://golang.org/pkg/]]
+
+* Kod analiz - Main
+
+.code hello.go HLM
+
+- Go programında tam olarak bir main fonksiyonu bulunmalıdır.
+
+* Kod analiz - Print
+
+.code hello.go HLF
+
+- Dış paketteki genel (public) fonksiyonları paket adını kullanarak çağırabiliriz.
+
+* Nasıl kurarız?
+
+* Derleyici ve IDE
+
+Go derleyicisi: [[https://golang.org/dl/]]
+
+IDE:
+- [[https://code.visualstudio.com/][Visual Studio Code]] (Microsoft) ve [[https://github.com/microsoft/vscode-go/][Go Eklentisi]] - Ücretsiz
+- [[https://atom.io/][Atom]] (GitHub) ve [[https://atom.io/packages/go-plus][Go-Plus]] eklentisi - Ücretsiz
+- [[https://www.jetbrains.com/go/][GoLand]] (JetBrains) - Ücretli
+
+
+Go Araç Takımı (toolkit) IDE ile gelir:
+- Açık kaynak, üçüncü parti yazılımlar
+- Hata ayıklama, otomatik tamamlama, linter, formatter, vs
+
+* Çalışma Ortamı
+
+Çalışma alanı klasörünü kullanıcı klasörünün altında yaratın
+Windows
+
+    mkdir %USERPROFILE%\go
+
+Linux / MacOS
+
+    mkdir ~/go
+
+☝️Farklı bir klasör için *GOPATH* ortam değişkenini belirleyin.
+Linux / MacOS
+
+    export GOPATH=/home/myuser/workspace/go
+
+Windows
+
+    set GOPATH=C:\go
+
+* İlk Go programı
+
+*src* klasörü altına örnek projemizi yaratalım
+
+👉 *go/src* klasörü go kaynak kodlarının bulunduğu klasördür.
+
+Linux / MacOS
+
+    mkdir ~/go/src/selam
+
+Windows
+
+    mkdir %USERPROFILE%\go\src\selam
+
+Örnek kodu *selam.go* olarak kaydedelim
+
+.code hello.go
+
+* Derleme
+
+    $ cd ~/go/src/selam
+    $ ls -l
+    total 8
+    -rw-r--r--  1 kaskavalci  staff  75 Aug 10 15:12 selam.go
+
+Kodu derleyelim
+
+    $ go build selam.go
+    $ ls -l
+    total 4128
+    -rwxr-xr-x  1 kaskavalci  staff  2108024 Aug 10 15:13 selam
+    -rw-r--r--  1 kaskavalci  staff       75 Aug 10 15:12 selam.go
+
+Çalıştıralım
+
+    $ ./selam
+    Selam Gençler
+
+* Yükleme (Install)
+
+go install programı derler ve go'nun uygulama klasörüne taşır.
+
+    $ go install
+    $ ls -l ~/go
+    total 0
+    drwxr-xr-x  3 kaskavalci  staff  96 Aug 10 15:20 bin
+    drwxr-xr-x  3 kaskavalci  staff  96 Aug 10 15:12 src
+    $ ls -l ~/go/bin
+    total 4120
+    -rwxr-xr-x  1 kaskavalci  staff  2108024 Aug 10 15:20 selam
+
+Uygulamayı çağıralım
+
+    $ selam
+    bash: selam: command not found
+
+Çünkü *~/go/bin* PATH değişkeninde değil. [[https://github.com/golang/go/wiki/SettingGOPATH#windows][Windows'ta ortam değişkeni tanımlama]]
+
+    $ export PATH=$PATH:~/go/bin
+    $ selam
+    Selam Gençler
