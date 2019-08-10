@@ -102,6 +102,8 @@ Maskot!
 
 * Nasıl kurarız?
 
+.image images/MovingGopher.png _ 500
+
 * Derleyici ve IDE
 
 Go derleyicisi: [[https://golang.org/dl/]]
