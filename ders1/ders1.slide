@@ -18,8 +18,8 @@ Go Programlama Diline Başlangıç
 - 2012 yılında Go 1 yayımlandı
 - 2019 yılında Go 1.12 yayımlandı
 - Go 2 çalışmaları sürüyor
-
-.image images/BLUE_GLASSES_GOPHER.png _ 600
+.caption _Gopher_ by [[https://github.com/ashleymcnamara/gophers][Ashley McNamara]]
+.image images/BLUE_GLASSES_GOPHER.png _ 500
 
 * Neden yeni bir programlama dili?
 
@@ -53,20 +53,23 @@ Gereksinimler:
 
 * Neden Go öğrenmeyeliyim? - 1
 
--  [[https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted][2019 Stackoverflow]] anketinde en çok öğrenilmek istenen 3. dil
+- Stackoverflow Geliştirici Anketinde en çok öğrenilmek istenen 3. dil
 
+.caption [[https://insights.stackoverflow.com/survey/2019#most-popular-technologies][StackOverflow 2019 Developer Survey]]
 .image images/most-wanted-langs.png _ 600
 
 * Neden Go öğrenmeyeliyim? - 2
 
--  [[https://insights.stackoverflow.com/survey/2019#top-paying-technologies][2019 Stackoverflow]] anketinde en iyi kazandıran istenen 3. dil
+- Stackoverflow Geliştirici Anketinde en iyi kazandıran istenen 3. dil
 
+.caption [[https://insights.stackoverflow.com/survey/2019#top-paying-technologies][StackOverflow 2019 Developer Survey]]
 .image images/most-paying-langs.png _ 600
 
 * Neden Go öğrenmeyeliyim? - 3
 
 Maskot!
 
+.caption _Gopher_ by [[https://github.com/ashleymcnamara/gophers][Ashley McNamara]]
 .image images/CouchPotatoGopher.png _ 600
 
 
@@ -103,6 +106,7 @@ Maskot!
 * Nasıl kurarız?
 
 .image images/MovingGopher.png _ 500
+.caption _Gopher_ by [[https://github.com/ashleymcnamara/gophers][Ashley McNamara]]
 
 * Derleyici ve IDE
 
